@@ -1,0 +1,90 @@
+{% schema %}
+{
+  "name": "Featured Testimonial",
+  "tag": "section",
+  "class": "featured-testimonial-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section heading",
+      "default": "What our customers say"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#f9f9f9"
+    },
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "Text alignment",
+      "default": "center",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Testimonial text"
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author name"
+        },
+        {
+          "type": "image_picker",
+          "id": "photo",
+          "label": "Author photo"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Featured Testimonial",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+{% style %}
+  .featured-testimonial-section {
+    background-color: {{ section.settings.bg_color }};
+    text-align: {{ section.settings.text_align }};
+    padding: 3rem 1rem;
+  }
+  .featured-testimonial-heading {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  .featured-testimonial-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+{% endstyle %}
+
+<section class="featured-testimonial-section">
+  <h2 class="featured-testimonial-heading">
+    {{ section.settings.heading }}
+  </h2>
+  <div class="featured-testimonial-grid">
+    {% for block in section.blocks %}
+      {% render 'testimonial', block: block %}
+    {% endfor %}
+  </div>
+</section>

@@ -1451,5 +1451,21 @@
         "default": "scheme-1"
       }
     ]
+  },
+  {
+    "name": "Testimonial Font",
+    "settings": [
+      {
+        "type": "select",
+        "id": "testimonial_font",
+        "label": "Testimonial Font Style",
+        "default": "default",
+        "options": [
+          { "value": "default", "label": "Default" },
+          { "value": "serif", "label": "Serif" },
+          { "value": "mono", "label": "Monospace" }
+        ]
+      }
+    ]
   }
 ]
