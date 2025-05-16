@@ -1,10 +1,10 @@
-<div class="testimonial">
+<div class="testimonial" {{ block.shopify_attributes }}>
   {% if block.settings.photo != blank %}
     <img
       src="{{ block.settings.photo | image_url: width: 100 }}"
       alt="{{ block.settings.author | escape }}"
-      width="{{ block.settings.photo.width }}"
-      height="{{ block.settings.photo.height }}"
+      width="80"
+      height="80"
       class="testimonial-photo"
       style="border-radius: 50%; width: 80px; height: 80px;"
     >
