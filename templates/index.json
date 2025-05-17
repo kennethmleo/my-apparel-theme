@@ -222,6 +222,19 @@
     },
     "featured_testimonial": {
       "type": "featured-testimonial",
+      "blocks": {
+        "testimonial_4eeU8M": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "clothes fit well",
+            "author": "John Doe",
+            "photo": "shopify://shop_images/tshirts.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_4eeU8M"
+      ],
       "name": "Featured Testimonial",
       "settings": {
         "heading": "What our customers say",
